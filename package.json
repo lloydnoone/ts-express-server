@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles",
     "start:build": "tsc -w",
-    "start:run": "nodemon build/index.js",
+    "start:run": "nodemon build/app/index.js",
     "start": "concurrently npm:start:*"
   },
   "keywords": [],
@@ -22,5 +22,11 @@
     "express": "^4.17.1",
     "nodemon": "^2.0.6",
     "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
   }
 }
