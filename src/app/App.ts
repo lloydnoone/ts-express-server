@@ -23,7 +23,6 @@ export class App {
   }
 
   public startServer(): void {
-    // return the server as well as start
     const server = this.app.listen(3000, () => {
       const { port } = server.address() as AddressInfo
       this.port = port

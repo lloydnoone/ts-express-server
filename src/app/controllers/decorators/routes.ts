@@ -3,6 +3,8 @@ import { RequestHandler } from 'express'
 import { Methods } from './Methods'
 import { MetadataKeys } from './MetadataKeys'
 
+// limit the use of route decorators by applying this interace. It can then only
+// be applied to functions that are RequestHandlers. i.e take in a res, req and return void
 interface RouteHandlerDescriptor extends PropertyDescriptor {
   value?: RequestHandler 
 }

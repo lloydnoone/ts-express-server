@@ -31,8 +31,8 @@ export function controller(routePrefix: string) {
       const routeHandler = target.prototype[key]
       const path: string = Reflect.getMetadata(
         MetadataKeys.path,
-        target.prototype,
-        key
+        target.prototype, // class
+        key // name of the function
       )
 
       const method: Methods = Reflect.getMetadata(
