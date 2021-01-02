@@ -33,7 +33,9 @@ function controller(routePrefix) {
         for (var key in target.prototype) {
             // get each piece of metadata of each key
             var routeHandler = target.prototype[key];
-            var path = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.path, target.prototype, key);
+            var path = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.path, target.prototype, // class
+            key // name of the function
+            );
             var method = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.method, target.prototype, key);
             var middlewares = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.middleware, target.prototype, key) || [];
             var requiredBodyProps = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.validator, target.prototype, key) || [];
