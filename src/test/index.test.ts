@@ -14,7 +14,7 @@ beforeAll(async (done) => {
   app.ApplyMiddleware()
   app.startServer()
   done()
-},)
+})
 
 afterAll(() => {
   app.closeServer()
