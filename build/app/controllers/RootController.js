@@ -30,7 +30,7 @@ var RootController = /** @class */ (function () {
         }
     };
     RootController.prototype.getProtected = function (req, res) {
-        res.send('Welcome to protected route, logged in user');
+        res.status(200).send('Welcome to protected route, logged in user');
     };
     __decorate([
         decorators_1.get('/'),

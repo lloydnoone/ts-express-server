@@ -5,7 +5,7 @@ import { get, controller, use, bodyValidator, post } from './decorators'
 class LoginController {
   @get('/login')
   getLogin(req: Request, res: Response): void {
-    res.send(`
+    res.status(200).send(`
       <form method="POST">
         <div>
           <label>Email</label>
@@ -29,13 +29,13 @@ class LoginController {
       req.session = { loggedIn: true }
       res.redirect('/')
     } else {
-      res.send('Invalid email or password. ')
+      res.status(401).send('Invalid email or password. ')
     }
   }
 
   @get('/logout')
   getLogout(req: Request, res: Response) {
     req.session = undefined
-    res.redirect('/')
+    res.status(200).redirect('/')
   }
 }
