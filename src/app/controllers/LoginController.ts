@@ -1,8 +1,9 @@
-import { NextFunction, Request, Response } from 'express'
-import { get, controller, use, bodyValidator, post } from './decorators'
+import { Request, Response } from 'express'
+import { get, controller, bodyValidator, post } from './decorators'
+import { Controller } from '../controllers/Controller'
 
 @controller('/auth')
-class LoginController {
+export class LoginController extends Controller {
   @get('/login')
   getLogin(req: Request, res: Response): void {
     res.status(200).send(`
@@ -22,7 +23,7 @@ class LoginController {
 
   @post('/login')
   @bodyValidator('email', 'password')
-  postLogin(req: Request, res: Response) {
+  postLogin(req: Request, res: Response): void {
     const { email, password } = req.body
   
     if (email && password && email === 'lloyd@email.com' && password === 'pass') {
@@ -34,7 +35,7 @@ class LoginController {
   }
 
   @get('/logout')
-  getLogout(req: Request, res: Response) {
+  getLogout(req: Request, res: Response): void {
     req.session = undefined
     res.status(200).redirect('/')
   }

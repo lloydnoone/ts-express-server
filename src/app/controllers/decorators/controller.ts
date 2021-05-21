@@ -11,7 +11,7 @@ function bodyValidators(keys: string): RequestHandler {
       return
     }
 
-    for (let key of keys) {
+    for (const key of keys) {
       if (!req.body[key]) {
         res.status(422).send(`Missing property ${key}`)
         return
@@ -23,10 +23,12 @@ function bodyValidators(keys: string): RequestHandler {
 }
 
 export function controller(routePrefix: string) {
-  return function(target: Function) {
+  //fine to use "Function" because it will not be called.
+  /* eslint-disable-next-line  @typescript-eslint/ban-types */
+  return function(target: Function): void {
     const router = AppRouter.getInstance()
     
-    for (let key in target.prototype) {
+    for (const key in target.prototype) {
       // get each piece of metadata of each key
       const routeHandler = target.prototype[key]
       const path: string = Reflect.getMetadata(

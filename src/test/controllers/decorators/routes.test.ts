@@ -4,9 +4,8 @@ import { get } from '../../../app/controllers/decorators/routes'
 
 class TestClass {
   @get('/testpath')
-  testFunc(): void {
-
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  testFunc(): void {}
 }
 
 describe('routes decorator test suite', () => {

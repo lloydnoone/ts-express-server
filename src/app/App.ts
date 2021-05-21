@@ -9,14 +9,14 @@ import './controllers/RootController'
 
 export class App {
   private app: express.Express = express()
-  private port: number = 0
+  private port = 0
   private server: Server | null = null
 
   public getApp(): express.Express {
     return this.app
   }
 
-  public ApplyMiddleware() {
+  public ApplyMiddleware(): void {
     this.app.use(bodyParser.urlencoded({ extended: true }))
     this.app.use(cookieSession({ keys: ['alsdfsdf'] }))
     this.app.use(AppRouter.getInstance())

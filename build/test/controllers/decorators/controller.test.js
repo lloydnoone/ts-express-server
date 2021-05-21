@@ -50,10 +50,13 @@ var decorators_1 = require("../../../app/controllers/decorators");
 var App_1 = require("../../../app/App");
 jest.mock('../../../app/controllers/RootController', function () { return jest.fn(); });
 jest.mock('../../../app/controllers/LoginController', function () { return jest.fn(); });
+/* eslint-disable-next-line @typescript-eslint/no-empty-function */
 function testMiddleware() { }
 var TestClass = /** @class */ (function () {
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     function TestClass() {
     }
+    /* eslint-disable-next-line @typescript-eslint/no-empty-function */
     TestClass.prototype.testFunc = function () { };
     __decorate([
         decorators_1.get('/testroute'),
@@ -64,6 +67,7 @@ var TestClass = /** @class */ (function () {
     ], TestClass.prototype, "testFunc", null);
     TestClass = __decorate([
         decorators_1.controller('/testprefix')
+        /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     ], TestClass);
     return TestClass;
 }());

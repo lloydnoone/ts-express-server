@@ -1,5 +1,5 @@
 import { App } from '../app/App'
-import { AppRouter } from '../app/AppRouter'
+//import { AppRouter } from '../app/AppRouter'
 
 //jest.mock('../app/AppRouter')
 

@@ -3,9 +3,8 @@ import { bodyValidator } from '../../../app/controllers/decorators/bodyValidator
 
 class TestClass {
   @bodyValidator('name', 'pass')
-  testFunc(): void {
-
-  }
+  /* eslint-disable-next-line @typescript-eslint/no-empty-function */
+  testFunc(): void {}
 }
 
 describe('bodyValidator test suite', () => {
@@ -18,7 +17,4 @@ describe('bodyValidator test suite', () => {
 
     expect(requiredBodyProps).toEqual(['name', 'pass'])
   })
-
-  
-
 })

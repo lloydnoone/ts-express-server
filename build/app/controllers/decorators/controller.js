@@ -28,6 +28,8 @@ function bodyValidators(keys) {
     };
 }
 function controller(routePrefix) {
+    //fine to use "Function" because it will not be called.
+    /* eslint-disable-next-line  @typescript-eslint/ban-types */
     return function (target) {
         var router = AppRouter_1.AppRouter.getInstance();
         for (var key in target.prototype) {

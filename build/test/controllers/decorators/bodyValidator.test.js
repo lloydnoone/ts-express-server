@@ -14,8 +14,8 @@ var bodyValidator_1 = require("../../../app/controllers/decorators/bodyValidator
 var TestClass = /** @class */ (function () {
     function TestClass() {
     }
-    TestClass.prototype.testFunc = function () {
-    };
+    /* eslint-disable-next-line @typescript-eslint/no-empty-function */
+    TestClass.prototype.testFunc = function () { };
     __decorate([
         bodyValidator_1.bodyValidator('name', 'pass'),
         __metadata("design:type", Function),

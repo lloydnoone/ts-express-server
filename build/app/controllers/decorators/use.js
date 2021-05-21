@@ -11,6 +11,8 @@ exports.use = void 0;
 require("reflect-metadata");
 var MetadataKeys_1 = require("./MetadataKeys");
 function use(middleware) {
+    //target is controller, key is the function middleware is added to
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     return function (target, key, desc) {
         // get middlewares that have already been added or return empty array
         var middlewares = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.middleware, target, key) || [];
