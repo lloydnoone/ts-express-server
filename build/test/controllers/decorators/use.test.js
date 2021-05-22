@@ -11,13 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 var use_1 = require("../../../app/controllers/decorators/use");
+/* eslint-disable @typescript-eslint/no-empty-function */
 function testMiddleware() { }
 function anotherMiddleware() { }
+/* eslint-enable @typescript-eslint/no-empty-function */
 describe('use decorator test suite', function () {
     test('Should apply middleware as Metadata on a function', function () {
         var TestClass = /** @class */ (function () {
             function TestClass() {
             }
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             TestClass.prototype.testFunc = function () { };
             __decorate([
                 use_1.use(testMiddleware),
@@ -34,6 +37,7 @@ describe('use decorator test suite', function () {
         var TestClass = /** @class */ (function () {
             function TestClass() {
             }
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             TestClass.prototype.testFunc = function () { };
             __decorate([
                 use_1.use(testMiddleware),

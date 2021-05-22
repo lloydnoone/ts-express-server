@@ -1,5 +1,4 @@
 import express from 'express'
-import bodyParser from 'body-parser'
 import cookieSession from 'cookie-session'
 import { AppRouter } from './AppRouter'
 import { AddressInfo, Server } from 'net'
@@ -17,7 +16,8 @@ export class App {
   }
 
   public ApplyMiddleware(): void {
-    this.app.use(bodyParser.urlencoded({ extended: true }))
+    this.app.use(express.json())
+    this.app.use(express.urlencoded({extended: true}))
     this.app.use(cookieSession({ keys: ['alsdfsdf'] }))
     this.app.use(AppRouter.getInstance())
   }

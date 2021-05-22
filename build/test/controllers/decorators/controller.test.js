@@ -87,6 +87,7 @@ describe('controller decorator test suite', function () {
     test('Should add correct route, method and middleware to router', function () {
         //pull off details from express router
         var route;
+        // define array to hold routes from express handler
         var routes = [];
         app.getApp()._router.stack.forEach(function (middleware) {
             if (middleware.route) { // routes registered directly on the app

@@ -14,8 +14,8 @@ var routes_1 = require("../../../app/controllers/decorators/routes");
 var TestClass = /** @class */ (function () {
     function TestClass() {
     }
-    TestClass.prototype.testFunc = function () {
-    };
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    TestClass.prototype.testFunc = function () { };
     __decorate([
         routes_1.get('/testpath'),
         __metadata("design:type", Function),

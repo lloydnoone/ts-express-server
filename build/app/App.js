@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.App = void 0;
 var express_1 = __importDefault(require("express"));
-var body_parser_1 = __importDefault(require("body-parser"));
 var cookie_session_1 = __importDefault(require("cookie-session"));
 var AppRouter_1 = require("./AppRouter");
 require("./controllers/LoginController");
@@ -20,7 +19,8 @@ var App = /** @class */ (function () {
         return this.app;
     };
     App.prototype.ApplyMiddleware = function () {
-        this.app.use(body_parser_1.default.urlencoded({ extended: true }));
+        this.app.use(express_1.default.json());
+        this.app.use(express_1.default.urlencoded({ extended: true }));
         this.app.use(cookie_session_1.default({ keys: ['alsdfsdf'] }));
         this.app.use(AppRouter_1.AppRouter.getInstance());
     };

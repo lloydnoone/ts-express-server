@@ -49,8 +49,6 @@ describe('controller decorator test suite', () => {
     }[] = [];
 
     app.getApp()._router.stack.forEach(function(middleware: AnyObject){
-      console.log("middleware: ", middleware)
-      console.log("typeof middleware: ", typeof middleware)
         if(middleware.route){ // routes registered directly on the app
             routes.push(middleware.route);
         } else if(middleware.name === 'router'){ // router middleware

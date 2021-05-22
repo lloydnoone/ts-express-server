@@ -13,6 +13,7 @@ var AppRouter_1 = require("../../AppRouter");
 var MetadataKeys_1 = require("./MetadataKeys");
 function bodyValidators(keys) {
     return function (req, res, next) {
+        console.log(req.body);
         if (!req.body) {
             res.status(422).send('Invalid request');
             return;
