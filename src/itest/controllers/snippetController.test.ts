@@ -6,10 +6,10 @@ const snippetCorrect = {
 }
 
 const snippetIncorrect = {
-  snippet: 1
+  snippet: ""
 }
 
-describe('POST /login', () => {
+describe('POST /snippets', () => {
   test('should return a 422 unproccessible entity response for snippet that isnt a string', async (done) => {
     request
       .post('/snippets')
@@ -27,7 +27,7 @@ describe('POST /login', () => {
       .type('form')
       .send(snippetCorrect)
       .end((err: Error, res: Response) => {
-        expect(res.status).toBe(302)
+        expect(res.status).toBe(200)
         done()
       })
   })
