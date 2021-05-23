@@ -9,6 +9,7 @@ var cookie_session_1 = __importDefault(require("cookie-session"));
 var AppRouter_1 = require("./AppRouter");
 require("./controllers/LoginController");
 require("./controllers/RootController");
+require("./controllers/TestController");
 var App = /** @class */ (function () {
     function App() {
         this.app = express_1.default();

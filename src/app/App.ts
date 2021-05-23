@@ -5,7 +5,7 @@ import { AddressInfo, Server } from 'net'
 
 import './controllers/LoginController'
 import './controllers/RootController'
-import './controllers/SnippetController'
+import './controllers/TestController'
 
 export class App {
   private app: express.Application = express()
