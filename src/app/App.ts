@@ -7,11 +7,11 @@ import './controllers/LoginController'
 import './controllers/RootController'
 
 export class App {
-  private app: express.Express = express()
+  private app: express.Application = express()
   private port = 0
   private server: Server | null = null
 
-  public getApp(): express.Express {
+  public getApp(): express.Application {
     return this.app
   }
 
